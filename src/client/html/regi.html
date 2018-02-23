@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/regi2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  
+  <header>
+      
+      <nav class = "nav-bar">
+        <ul>
+          <li><a href="homepage.html"><button class="btn"><i class= "material-icons">home</i></button></a></li>
+          <li><a href="#Newsfeed"><button class = "btn"><i class = "material-icons">dashboard</i></button></a></li>
+          <li><a href="#yourblog"><button class="btn"><i class= "material-icons">pets</i></button></a></li>
+          <li><a href="loginpage copy.html" ><button class ="btn"><i class = "material-icons">input</i></button></a></li>
+          
+        </ul>
+      </nav>
+      
+  </header>
+  
+  <main>
+    
+    <div class = "content-body">
+      
+      <img src = "puppylogo.png" alt = "logo" width = "200" height = "200">
+      
+      <h1>Sign up now</h1>
+      
+      <h2>Please fill out all fields</h2>
+      
+      <form name = "regiForm" class="form" action="form.php" method="post" autocomplete="off">
+        <input type = "text" placeholder = "First Name" name = "firstName" required />
+        <input type = "text" placeholder = "Last Name" name = "lastName" required />
+        <input type="text" placeholder="User Name" name="username" required />
+        <input type="email" placeholder="Email" name="email" required />
+        <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+        <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+
+        <div class="avatar">
+          <label>Select your avatar: </label>
+          <input type="file" name="avatar" accept="image/*" required />
+        </div>
+        
+        <input type="submit" value="Register" name="register" class="btn regi-btn" />
+      
+      </form>
+     </div>
+  </main>
+</html>
+
