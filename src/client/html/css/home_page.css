@@ -13,9 +13,13 @@
   border: 1pt solid white;
 }
 
-ul {
+.navbar ul {
   float: right;
-  padding: .2em .67em .2em 0;
+  padding: .3em .67em .2em 0;
+  margin: .2em .2em .2em .2em;
+  overflow: hidden;
+  background-color: #1E90FF;
+  list-style-type: none;
 }
 
 .btn {
@@ -28,19 +32,19 @@ ul {
   background-color: #1E90FF;
   border: 1px solid #1E90FF;
   border-radius: 3px;
-  
+
 }
 
 .content-body {
   position:relative;
-  top:10%;    
+  top:10%;
   height:40%;
   width:450px;
   margin-top: 10em;
-  
+
   margin-left:auto;
   margin-right:auto;
-  
+
 }
 
 html, body {
@@ -48,14 +52,14 @@ html, body {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 200%;
   font-family: Verdana;
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
   display: block;
   text-align: center;
-  
+
 }
 
 footer {
@@ -65,6 +69,5 @@ footer {
 
 main {
   height: 75%;
-  
-}
 
+}

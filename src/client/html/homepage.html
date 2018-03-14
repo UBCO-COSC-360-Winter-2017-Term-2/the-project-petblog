@@ -1,40 +1,79 @@
+
 <!DOCTYPE html>
 <html>
-  
+
   <head lang="en">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="css/navbarandfooter.css">
+    <link rel="stylesheet" href="css/homepage.css">
   </head>
-  
+
   <body>
     <header>
-      
+
       <nav class = "nav-bar">
         <ul>
-          <li><a href="homepage.html"><button class="btn"><i class= "material-icons">home</i></button></a></li>
-          <li><a href="newsfeed.html"><button class = "btn"><i class = "material-icons">dashboard</i></button></a></li>
-          <li><a href="bloggerspage.html"><button class="btn"><i class= "material-icons">pets</i></button></a></li>
-          <li><a href="loginpage copy.html" ><button class ="btn"><i class = "material-icons">input</i></button></a></li>
-          
+          <li><a href="bloggerspage.html">Your Blog</a></li>
+          <li><a href="newsfeed.html">NewsFeed</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li class="active"><a href="homepage.html">Home</a></li>
+
+
         </ul>
       </nav>
-      
-    </header>
-  
-    <main>
-      
-      <div class = "content-body">
-        <h1>PetBlog</h1>
-        
-      </div>
 
-     
-    
+    </header>
+
+    <main>
+
+        <img  src="images/title.png" height="100" width="250"></br>
+        <img  src="images/pets.png" height="200" width="350"></br>
+
+        <div class= "mainpagetext">
+          <p>A space for parents of pets to connect</p>
+          <p>Share your pet stories by creating account today</p>
+        </div>
+
     </main>
-    
+
     <footer>
-      <p>Questions? email us at: info@petblog.ca</p>
+      <table>
+
+        <tr>
+          <td width="25%">
+            <img src="images/pawprint.png" width="90" height="90">
+          </td>
+          <td width="25%">
+            <h5>PetBlog</h5>
+            <a href="#">About Us</a></br>
+            <a href="#">The Team</a></br>
+            <a href="#">Partners</a></br>
+            <a href="#">Careers</a></br>
+            <td>
+
+          <td width="25%">
+            <h5>Contact</h5>
+            <a href="#">The University of British Columbia Okanagan</a></br>
+            <a href="#">info@petblog.ca</a></br>
+
+
+          </td>
+          <td width="25%">
+            <h5>Connect</h5>
+            <a href="#">Facebook</a></br>
+            <a href="#">Instagram</a></br>
+            <a href="#">Twitter</a></br>
+            <a href="#">Google Plus</a></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="copyright">&copy Copyright COSC 360 2018</td>
+        </tr>
+
+      </table>
     </footer>
+
   </body>
 </html>

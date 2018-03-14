@@ -1,25 +1,18 @@
 
 h1 {
   font-size: 2em;
-  font-family: Verdana;
+  font-family: sans-serif;
   font-weight: normal;
   margin: .67em 0;
   display: block;
 }
 
-h2 {
-  font-size: 1em;
-  font-family: Verdana;
-  font-weight: normal;
-  margin: .67em 0;
-  display: block;
-}
 
 .content-body {
   position:relative;
-  top:10%;
+  top:20%;
   height:65%;
-  width:450px;
+  width: 50%;
   margin-left:auto;
   margin-right:auto;
 }
@@ -41,9 +34,7 @@ input[type="email"]
   font-size: 15px;
   line-height: 20px;
   border: 1px solid black;
-  border-radius: 3px;
-  background-color: #DCDCDC;
-  color: black;
+  background-color: white;
 }
 
 .btn {
@@ -53,29 +44,12 @@ input[type="email"]
   line-height: 20px;
   height: 34px;
   color: white;
-  background-color: #1E90FF;
-  border: 1px solid #1E90FF;
+  background-color: #00e6e6;
   border-radius: 3px;
+  margin-bottom: 20%;
 
 }
-
-.avatar label{
-  font-size: 1.5em;
-}
-
-.avatar {
-    margin: 10px 0 20px 0;
-    font-family: Verdana;
-    font-size: 0.5em;
-}
-
-.regi-admin-link {
-  margin: 20px 0;
-}
-
-img {
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
+.admin_button{
+  text-align: left;
+  margin-bottom: 10%;
 }
