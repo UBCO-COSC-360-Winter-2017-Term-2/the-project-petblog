@@ -1,5 +1,11 @@
 
 .mainpagetext{
+  margin-top: 5%;
   margin-bottom: 10%;
   font-family: sans-serif;
+}
+
+main{
+  text-align: center;
+  align-items: center;
 }

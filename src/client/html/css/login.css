@@ -7,6 +7,10 @@ h1 {
   display: block;
 }
 
+main{
+  text-align: center;
+  align-items: center;
+}
 
 .content-body {
   position:relative;
@@ -47,6 +51,7 @@ input[type="email"]
   background-color: #00e6e6;
   border-radius: 3px;
   margin-bottom: 20%;
+  text-align: center;
 
 }
 .admin_button{
