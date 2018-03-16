@@ -2,7 +2,7 @@ header .nav-bar{
   margin-left: 5%;
   margin-right: 5%;
   font-family: sans-serif;
-  font-size: 70%;
+  font-size: 110%;
 }
 
 header ul{
@@ -48,10 +48,10 @@ footer td{
 footer tr{
   text-align: center;
   font-family: sans-serif;
-  font-size: 95%;
+  font-size: 100%;
 }
 .copyright{
-  font-size: 50%;
+  font-size: 70%;
 }
 footer h5{
   color: white;

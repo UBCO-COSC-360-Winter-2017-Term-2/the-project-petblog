@@ -5,6 +5,7 @@ h1 {
   font-weight: normal;
   margin: .67em 0;
   display: block;
+
 }
 
 main{
@@ -56,5 +57,8 @@ input[type="email"]
 }
 .admin_button{
   text-align: left;
-  margin-bottom: 10%;
+  margin-bottom: 35%;
+}
+.loginandreg{
+    margin-top: 20%;
 }
