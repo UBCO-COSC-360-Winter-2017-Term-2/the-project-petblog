@@ -65,3 +65,8 @@ input[type="email"]
 .admin_buttons{
   margin-bottom: 40%;
 }
+table{
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20%;
+}
