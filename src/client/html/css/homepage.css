@@ -1,3 +1,13 @@
+h1{
+  color: #00cc7a;
+  font-family: sans-serif;
+
+  font-size: 800%;
+}
+.animals{
+  margin-top: 5%;
+}
+
 
 .mainpagetext{
   margin-top: 5%;
@@ -9,4 +19,20 @@
 main{
   text-align: center;
   align-items: center;
+}
+.steps{
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+  font-family: sans-serif;
+}
+table h4{
+  font-size: 130%;
+  padding-bottom: 2%;
+}
+.steps{
+  padding-left: 20%;
+  padding-right: 20%;
 }

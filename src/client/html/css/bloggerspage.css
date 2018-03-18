@@ -29,34 +29,29 @@ h2 {
 }
 
 .create-post {
-  border: 1pt solid;
   border-radius: 3px;
   padding: 3px;
   margin-top: 50px;
 }
 
 .create-post input[type="textarea"] {
-  height:60px;
-  width:100%;
+  height:70px;
+  width: 50%;
   margin-bottom: 10px;
   font-size: 15px;
   border: 1px solid;
   border-radius: 3px;
 }
 
-input[type="file"] {
-  display: inline-block;
-  margin-left: 3px;
+.create-post input[type="text"] {
+  height: 40px;
+  width: 48%;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border: 1px solid;
+  border-radius: 3px;
 }
 
-.create-post label {
-  font-size: 1em;
-}
-
-.create-post div {
-  font-family: Verdana;
-  font-size: 0.5em;
-}
 
 figure {
   margin-left: auto;
@@ -72,64 +67,43 @@ img {
   margin-right: auto;
 
 }
-
 .post-btn {
   width: 100%;
-  margin-bottom: 0;
 }
 
-section {
-  margin-top: 50px;
-  height: 400px;
-  margin-right: 5em;
-  margin-left: 5em;
-  margin-bottom: 20px;
-  border: 1pt solid #E0FFFF;
-  overflow: scroll;
-  background-color: #708090;
-  border-radius: 5px;
+datalist{
+  border: solid .25em black;
+  background-color: blue;
+  color: black;
 }
 
-.post {
-  margin: 1.5em 1.75em 4em 1.75em;
-  font-family: Verdana;
-  background-color: #1E90FF;
-  border-radius: 5px;
-  padding: 3px;
+.theposts{
+  border: 1px solid black;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  height: 500px;
+  overflow-y: scroll;
+  display: inline-block;
 }
-
-.comments, .comment {
-  font-size: 0.65em;
-  margin: 5px 0 5px 5px;
-  border-bottom-style: solid;
-  border: 1pt;
-  border-color: #708090;
+.apost{
+  border: 1px solid black;
+  align-content: center;
+  text-align: center;
+  width: 75%;
+  height: 500px;
+  overflow-y: scroll;
+  display: inline-block;
 }
-
-.comment {
-  background-color: #DCDCDC;
-  border: 1pt solid #1E90FF;
-  border-radius: 3px;
-  padding: 3px;
+.comments{
+  border: 1px solid black;
+  align-content: center;
+  text-align: center;
+  width: 75%;
+  height: 100px;
+  overflow-y: scroll;
+  display: inline-block;
 }
-
-.cmt-txtbox-ctn button {
-  font-size: 0.65em;
-  line-height:7.5px;
-  height: 20px;
-  background-color: #708090;
-}
-
-.cmt-txtbox-ctn input[type="textarea"]{
-  font-size: 0.65em;
-  height: 20px;
-  background-color: #DCDCDC;
-  border: 1px solid #DCDCDC;
-  border-radius: 3px;
-}
-
-
-time {
-  font-style: italic;
-  font-size: .75em;
+.create-post{
+  align-items: flex-end;
 }
