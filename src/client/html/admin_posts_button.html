@@ -1,98 +1,41 @@
+
+
 <!DOCTYPE html>
 <html>
-<head lang="en">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/newsfeed.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-</head>
+  <head lang="en">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbarandfooter.css">
+  </head>
 
-<body>
-  <header>
+  <body>
+    <header>
 
       <nav class = "nav-bar">
         <ul>
-          <li><a href="homepage.html"><button class="btn"><i class= "material-icons">home</i></button></a></li>
-          <li><a href="#Newsfeed"><button class = "btn"><i class = "material-icons">dashboard</i></button></a></li>
-          <li><a href="#yourblog"><button class="btn"><i class= "material-icons">pets</i></button></a></li>
-          <li><a href="loginpage copy.html" ><button class ="btn btn-nav-log"><i class = "material-icons">input</i></button></a></li>
+          <li><a href="login.html">Log Out</a></li>
+          <li class="active"><a href="admin_page.html">Admin</a></li>
+
 
         </ul>
       </nav>
 
     </header>
-
+<body>
     <main>
       <div class = "content-body">
+
+
       <h1>ADMIN - Posts</h1>
 
       <div class = "content">
         <div class = "post-container">
 
           <div class = "search-post">
-            <input type="textarea" placeholder = "Search..." name = "search">
-            <button class = "btn post-btn"><i class = "material-icons">search</i></button>
+            <input type="textarea" placeholder = "Narrow by Pet Type..." name = "search">
+            <button class = "btn">Search</button>
           </div>
-
-          <section class = "posts">
-            <article class = "post">
-              <header>
-                <h2>Post1 Title</h2>
-                <time datetime = "2018-01-21">January 21, 2018</time>
-              </header>
-              <figure>
-                <img src = "puppylogo.png" alt = "Image content" width = "150" height = "150"/>
-              </figure>
-              <p>Text content for a post</p>
-
-              <article class = "comments">
-
-                <div class = "comment">
-                  <p>By David on <time datetime="2018-01-21">January 21, 2018</time></p>
-                  <p>Awesome cartoon puppy.</p>
-                </div>
-                <hr/>
-                <div class = "comment">
-                  <p>By Levi on <time datetime="2018-01-23">January 23, 2018</time></p>
-                  <p>Love the new site! Hopefully the project goes well.</p>
-                </div>
-
-              </article>
-              <div class = "cmt-txtbox-ctn">
-                <input type = "textarea" placeholder = "Add a comment..." name = "cmt-txtbox">
-                <button class = "btn">Post</button>
-              </div>
-          </article>
-
-           <article class = "post">
-              <header>
-                <h2>Post2 Title</h2>
-                <time datetime = "2018-01-10">January 10, 2018</time>
-              </header>
-              <figure>
-                <img src = "puppylogo.png" alt = "Image content" width = "150" height = "150"/>
-              </figure>
-              <p>Text content for a post</p>
-
-              <article class = "comments">
-
-                <div class = "comment">
-                  <p>By David on <time datetime="2018-01-21">January 21, 2018</time></p>
-                  <p>Awesome cartoon puppy.</p>
-                </div>
-                <hr/>
-                <div class = "comment">
-                  <p>By Levi on <time datetime="2018-01-23">January 23, 2018</time></p>
-                  <p>Love the new site! Hopefully the project goes well.</p>
-                </div>
-
-              </article>
-              <div class = "cmt-txtbox-ctn">
-                <input type = "textarea" placeholder = "Add a comment..." name = "cmt-txtbox">
-                <button class = "btn">Post</button>
-              </div>
-            </article>
-          </section>
 
         </div>
       </div>
@@ -100,5 +43,46 @@
 
     </div>
     </main>
+  </body>
+
+      <footer>
+        <table>
+
+          <tr>
+            <td width="25%">
+              <img src="images/pawprint.png" width="90" height="90">
+            </td>
+            <td width="25%">
+              <h5>Company</h5>
+              <a href="#">About Us</a></br>
+              <a href="#">The Team</a></br>
+              <a href="#">Partners</a></br>
+              <a href="#">Careers</a></br>
+            </td>
+
+            <td width="25%">
+              <h5>Contact</h5>
+              <a href="#">The University of British Columbia</a></br>
+                <a href="#">Okanagan</a></br>
+              <a href="#">info@petblog.ca</a></br>
+                <a href='#'>1 800 123 4567</a></br>
+
+
+            </td>
+            <td width="25%">
+              <h5>Connect</h5>
+              <a href="#">Facebook</a></br>
+              <a href="#">Instagram</a></br>
+              <a href="#">Twitter</a></br>
+              <a href="#">Google Plus</a></br>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="copyright">&copy Copyright COSC 360 2018</td>
+          </tr>
+
+        </table>
+      </footer>
 
 </html>

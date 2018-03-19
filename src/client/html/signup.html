@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbarandfooter.css">
+  </head>
+
+  <header>
+    <nav class = "nav-bar">
+      <ul>
+        <li ><a href="login.html">Log In</a></li>
+        <li class="active"><a href="signup.html">Sign Up</a></li>
+        <li ><a href="newsfeed.html">NewsFeed</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="homepage.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+  <main>
+
+    <div class = "content-body">
+
+      <h1 class="loginandreg">SIGN UP</h1>
+
+      <h2>Please fill out all fields</h2>
+
+      <form name = "regiForm" class="form" action="signup.php" method="POST" autocomplete="off">
+
+        <input type = "text" placeholder = "First Name" name = "firstName" required />
+        <input type = "text" placeholder = "Last Name" name = "lastName" required />
+        <input type="text" placeholder="User Name" name="username" required />
+        <input type="email" placeholder="Email" name="email" required />
+        <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+        <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+
+        <div class="avatar">
+          <label>Select your Profile Picture: </label>
+          <input type="file" name="avatar" accept="image/*" required />
+        </div>
+
+        <input type="submit" value="Register" name="register" class="regi-btn" />
+
+      </form>
+     </div>
+  </main>
+
+  <footer>
+    <table>
+
+      <tr>
+        <td width="25%">
+          <img src="images/pawprint.png" width="90" height="90">
+        </td>
+        <td width="25%">
+          <h5>Company</h5>
+          <a href="#">About Us</a></br>
+          <a href="#">The Team</a></br>
+          <a href="#">Partners</a></br>
+          <a href="#">Careers</a></br>
+        </td>
+
+        <td width="25%">
+          <h5>Contact</h5>
+          <a href="#">The University of British Columbia</a></br>
+            <a href="#">Okanagan</a></br>
+          <a href="#">info@petblog.ca</a></br>
+            <a href='#'>1 800 123 4567</a></br>
+
+        </td>
+        <td width="25%">
+          <h5>Connect</h5>
+          <a href="#">Facebook</a></br>
+          <a href="#">Instagram</a></br>
+          <a href="#">Twitter</a></br>
+          <a href="#">Google Plus</a></br>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="copyright">&copy Copyright COSC 360 2018</td>
+      </tr>
+
+    </table>
+  </footer>
+</body>
+</html>

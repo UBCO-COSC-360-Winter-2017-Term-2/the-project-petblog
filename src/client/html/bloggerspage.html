@@ -2,112 +2,129 @@
 <html>
 <head lang="en">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbarandfooter.css">
     <link rel="stylesheet" href="css/bloggerspage.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+
+
 
 </head>
 <body>
   <header>
-      
-      <nav class = "nav-bar">
-        <ul>
-          <li><a href="homepage.html"><button class="btn"><i class= "material-icons">home</i></button></a></li>
-          <li><a href="newsfeed.html"><button class = "btn"><i class = "material-icons">dashboard</i></button></a></li>
-          <li><a href="loginpage copy.html" ><button class ="btn"><i class = "material-icons">input</i></button></a></li>
-          
-        </ul>
-      </nav>
-      
+
+    <nav class = "nav-bar">
+      <ul>
+        <li class="active">
+        <li><a href="login.html">Log Out</a></li>
+        <li><a href="newsfeed.html">NewsFeed</a></li>
+        <li><a href="bloggerspage">Your Blog</a></li>
+      </ul>
+    </nav>
   </header>
-  
+
   <main>
-    
+
     <div class = "content">
-    
+
       <figure>
-        <img src = "profile_picture.png" alt = "Avatar" class = "avatar-picture" width = "200" height = "200" align = "middle"/>
+        <img src = "images/profile_picture.png" alt = "Avatar" class = "avatar-picture" width = "200" height = "200" align = "middle"/>
       </figure>
       <h1>Blog Name</h1>
-      
+
       <div class = "post-container">
-        
+
+
+        <form method="post" name="blogpost" action="php/post.php">
+
         <div class = "create-post">
-          <input type="textarea" placeholder = "Create a text post" name = "text-post">
-          
-          <div>
-            <label>Add an image: </label>
-            <input type="file" name ="image-post" accept="image/*">
-            <label>Add a video: </label>
-            <input type="file" name ="video-post" accept="video/*">
-          </div>
-          <button class = "btn post-btn">Create post</button>
+
+          <p>Create a Post:</p>
+
+          <input type="textarea" placeholder = "Write a caption" name = "text-post"></br>
+
+          <label>Add an image: </label>
+          <input type="file" name ="image-post" accept="image/*"></br>
+
+          <label>Type of Pet:</label>
+          <input list="browsers">
+            <datalist id="browsers">
+              <option value="Dogs">
+              <option value="Cats">
+              <option value="Fish">
+              <option value="Mouse">
+              <option value="Hamster">
+            </datalist></br>
+          <button class = "btn">POST</button>
         </div>
-        
-        <section class = "posts">
-          <article class = "post">
-            <header>
-              <h2>Post1 Title</h2>
-              <time datetime = "2018-01-21">January 21, 2018</time>
-            </header>
-            <figure>
-              <img src = "puppylogo.png" alt = "Image content" width = "150" height = "150"/>
-            </figure>
-            <p>Text content for a post</p>
-          
-            <article class = "comments">
-            
-              <div class = "comment">
-                <p>By David on <time datetime="2018-01-21">January 21, 2018</time></p>
-		            <p>Awesome cartoon puppy.</p>
-		          </div>
-		          <hr/>
-		          <div class = "comment">
-		            <p>By Levi on <time datetime="2018-01-23">January 23, 2018</time></p>
-		            <p>Love the new site! Hopefully the project goes well.</p>
-		          </div>
-		        
-		        </article>
-		        <div class = "cmt-txtbox-ctn">
-		          <input type = "textarea" placeholder = "Add a comment..." name = "cmt-txtbox">
-		          <button class = "btn">Post</button>
-		        </div>
-		    </article>
-		    
-		     <article class = "post">
-            <header>
-              <h2>Post2 Title</h2>
-              <time datetime = "2018-01-10">January 10, 2018</time>
-            </header>
-            <figure>
-              <img src = "puppylogo.png" alt = "Image content" width = "150" height = "150"/>
-            </figure>
-            <p>Text content for a post</p>
-          
-            <article class = "comments">
-            
-              <div class = "comment">
-                <p>By David on <time datetime="2018-01-21">January 21, 2018</time></p>
-		            <p>Awesome cartoon puppy.</p>
-		          </div>
-		          <hr/>
-		          <div class = "comment">
-		            <p>By Levi on <time datetime="2018-01-23">January 23, 2018</time></p>
-		            <p>Love the new site! Hopefully the project goes well.</p>
-		          </div>
-		        
-		        </article>
-		        <div class = "cmt-txtbox-ctn">
-		          <input type = "textarea" placeholder = "Add a comment..." name = "cmt-txtbox">
-		          <button class = "btn">Post</button>
-		        </div>
-		    </article>
-		  </section>
-        
+          </form>
+
+
+
+        <h1>Your NewsFeed</p>
+
+          <div class= "theposts">
+
+            <div class= "postandcomments">
+              <div class="apost">
+                  <figure>
+                  <img src="images/profile_picture.png" height="380">
+                  <figcaption> caption here</figcaption>
+                  </figure>
+              </div>
+              <div class="comments">
+                  <form method="post">
+                    <p> Username: comments here</p>
+                  </form>
+              </div>
+            </div>
+
+
+          </div>
+
+
     </div>
   </div>
 </main>
 
+<footer>
+  <table>
+
+    <tr>
+      <td width="25%">
+        <img src="images/pawprint.png" width="90" height="90">
+      </td>
+      <td width="25%">
+        <h5>Company</h5>
+        <a href="#">About Us</a></br>
+        <a href="#">The Team</a></br>
+        <a href="#">Partners</a></br>
+        <a href="#">Careers</a></br>
+      </td>
+
+      <td width="25%">
+        <h5>Contact</h5>
+        <a href="#">The University of British Columbia</a></br>
+          <a href="#">Okanagan</a></br>
+        <a href="#">info@petblog.ca</a></br>
+        <a href='#'>1 800 123 4567</a></br>
+
+
+      </td>
+      <td width="25%">
+        <h5>Connect</h5>
+        <a href="#">Facebook</a></br>
+        <a href="#">Instagram</a></br>
+        <a href="#">Twitter</a></br>
+        <a href="#">Google Plus</a></br>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="copyright">&copy Copyright COSC 360 2018</td>
+    </tr>
+
+  </table>
+</footer>
 
 </body>
 </html>
