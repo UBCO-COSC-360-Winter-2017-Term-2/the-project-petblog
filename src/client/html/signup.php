@@ -9,7 +9,6 @@
 	session_start();
   }
 
-  if (isset($_POST['username'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $username = $_POST['username'];
@@ -17,38 +16,61 @@
     $password = $_POST['password'];
     $password2 = $_POST['confirmpassword'];
     $hashPass = md5($password);
-    $avatar =  $_FILES['avatar']['tmp_name'];
-    $avContent = file_get_contents($avatar);
-    echo $avatar;
+
+    $file =  $_FILES['avatar'];
+
+    $target_dir = "propics/";
+    $target_file = $target_dir . basename($_FILES['avatar']['name']);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $uploadOk = 1;
+
+    if ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "gif"){
+        if($_FILES["userfile"]["size"] < 100000){
+            $uploadOk = 1;
+
+        }else{
+            $uploadOk = 0;
+        }
+    }else{
+      $uploadOk = 0;
+    }
+
+  if (isset($_POST['username'])) {
 
     $sql = "SELECT username FROM users WHERE username = '$username'";
     $rs = mysqli_query($db, $sql);
     $count=mysqli_num_rows($rs);
 
-    if ($count==1) {
-        echo '<script type="text/javascript">alert("Username already taken!");</script>';
+    if ($count==0) {
+      if ($password == $password2) {
+        if ($uploadOk ==1){
 
-        //header("location: signup.html");
+        move_uploaded_file($_FILES["avatar"]["tmp_name"],$target_file);
 
-    }
-    else if ($password == $password2) {
-        //echo("deeper");
-        $sql = "INSERT INTO users VALUES('$username', '$hashPass', '$firstName', '$lastName', '$email', '$avContent')";
+
+        $sql = "INSERT INTO users VALUES('$username', '$hashPass', '$firstName', '$lastName', '$email', '$target_file')";
         if ($db->query($sql) === TRUE) {
             //echo "New record created successfully";
+
             header("location: login.php");
         } else {
             echo "Error: " . $sql . "<br>" . $db->error;
         }
 
-        $_SESSION['message'] = "You are now registered";
+      }else{
+        echo '<script type="text/javascript">alert("Image Error");</script>';
+      }
+
     } else {
 
         echo '<script type="text/javascript">alert("Passwords do no match!");</script>';
 
     }
+    } else {
+        echo '<script type="text/javascript">alert("Username already taken!");</script>';
+    }
     $db->close();
-  }
+}
 
 ?>
 <!DOCTYPE html>
@@ -80,7 +102,7 @@
 
       <h2>Please fill out all fields</h2>
 
-      <form name = "regiForm" class="form" action="signup.php" method="POST" autocomplete="off">
+      <form name = "regiForm" class="form" action="signup.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 
         <input type = "text" placeholder = "First Name" name = "firstName" required />
         <input type = "text" placeholder = "Last Name" name = "lastName" required />

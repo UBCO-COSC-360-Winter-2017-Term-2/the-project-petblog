@@ -18,6 +18,7 @@
 
     $username= $_POST['username'];
     $password= $_POST['password'];
+
     $passHash = md5($password);
 
     $result = mysqli_query($db, "SELECT username, password FROM users WHERE username='".$username."'AND password='".$passHash."'");
@@ -25,6 +26,7 @@
 
       if(mysqli_num_rows($result) == 1){
           $_SESSION['username']=$username;
+          
           $_SESSION['loggedin']=true;
 
           header("Location: bloggerspage.php");

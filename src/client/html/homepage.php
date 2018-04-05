@@ -91,6 +91,7 @@ session_start();
           <td width="25%">
             <img src="images/pawprint.png" width="90" height="90">
           </td>
+
           <td width="25%">
             <h5>Company</h5>
             <a href="#">About Us</a></br>
@@ -105,9 +106,8 @@ session_start();
             <a href="#">Okanagan</a></br>
             <a href="#">info@petblog.ca</a></br>
             <a href='#'>1 800 123 4567</a></br>
-
-
           </td>
+
           <td width="25%">
             <h5>Connect</h5>
             <a href="#">Facebook</a></br>

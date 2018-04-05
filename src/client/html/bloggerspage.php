@@ -8,6 +8,13 @@
     session_start();
   }
 
+
+  $sql = 'SELECT * FROM users WHERE username= "'.$_SESSION['username'].'"';
+
+  $rs = mysqli_query($db, $sql) or die(mysqli_error());
+
+  $row = mysqli_fetch_assoc($rs);
+
 ?>
 
 <!DOCTYPE html>
@@ -38,12 +45,13 @@
     <div class = "content">
       <figure>
 
-        <img src ="images/profile_picture.png" alt = "Avatar" class = "avatar-picture" width = "200" height = "200" align = "middle"/>
+
+        <img src =<?php echo $row['avatar']; ?> class = "avatar-picture" height = "200" align = "middle"/>
       </figure>
-      <h1><?php echo $_SESSION['username'];    ?></h1>
+      <h1><?php echo $_SESSION['username']; ?></h1>
 
 
-        <form method="post" action="post.php">
+        <form method="post" action="post.php" enctype="multipart/form-data">
 
         <div class = "create-post">
             <h3>Create a Post:</h3>
