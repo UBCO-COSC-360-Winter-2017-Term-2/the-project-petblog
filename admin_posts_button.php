@@ -1,12 +1,12 @@
 <?php
 include 'db.php';
-
 if($db->connect_error){
 die("Connection failed");
 }
 else{
 session_start();
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -45,6 +45,10 @@ session_start();
             <input type="textarea" placeholder = "Narrow by Pet Type..." name = "search">
             <button class = "btn">Search</button>
           </div>
+            
+            <div class = "postandcomments">
+                <?php include 'admin_posts.php'; ?>
+            </div>
 
         </div>
       </div>
