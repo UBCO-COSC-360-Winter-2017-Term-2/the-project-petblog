@@ -39,7 +39,9 @@ if(mysqli_num_rows($res) > 0) {
                     </div>
                 </div>";
   }
-  echo "waddup";
+  
   echo $posts;
 }
+
+mysqli_close($db);
 ?>
