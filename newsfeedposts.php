@@ -19,6 +19,18 @@ if(mysqli_num_rows($res) > 0) {
     $image = $row['image'];
     $caption = $row['caption'];
     $username = $row['username'];
+    $postId = $row['postId'];
+
+  //  $comments= "";
+
+    //   $comment= $row['comment'];
+
+    //    $comments.= "
+    //      <tr name='comment'>
+    //        ".$comment."
+    //      </tr>"
+  //  }
+//}
 
     if ($_SESSION['loggedin'] == true){
 
@@ -33,18 +45,21 @@ if(mysqli_num_rows($res) > 0) {
         </div>
         <div class='comments'>
           <table class='commentstable'>
-            ".include postscomments.php;."
           </table>
         </div>
 
         <div class='postcomments'>
-          <form method='post'>
-            <input type='textarea'  placeholder='Comment..'' width='100%'' class='postcomment'>
+          <form method='post' action='postcomments.php'>
+            <input type = 'hidden' name ='postId' value = '".$postId."'>
+            <input type='textarea' name='comment' placeholder='Comment..'  width='100%' class='postcomment'>
             <input type='submit' value='Post' name='postcomment' class='regi-btn' />
           </form>
         </div>
 
       </div>";
+
+
+
     } else{
       $posts.= "  <div class= 'postandcomments'>
           <div class='apost'>
@@ -57,7 +72,7 @@ if(mysqli_num_rows($res) > 0) {
           </div>
           <div class='comments'>
             <table class='commentstable'>
-                ".include postscomments.php;."
+
             </table>
           </div>
 
@@ -68,6 +83,7 @@ if(mysqli_num_rows($res) > 0) {
 } else{
   echo "There are no posts";
 }
+
 
 
  ?>

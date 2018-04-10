@@ -8,26 +8,20 @@ if($db->connect_error){
     session_start();
 }
 
-$sql = "SELECT * FROM comments ORDER BY cid DESC";
+$postId = $_POST['postId'];
+$comment = $_POST['comment'];
 
-$res = mysqli_query($db,$sql) or die(mysqli_error());
+$username = $_SESSION['username'];
 
-$comments= "";
+if (isset($comment)){
+  $sql = "INSERT INTO comments(comment,username,postId) VALUES('$comment','$username','$postId')";
 
-if(mysqli_num_rows($res) > 0) {
-  while($row = mysqli_fetch_assoc($res)){
-
-    $comment= $row['comment'];
-
-    $comments.= "
-            <tr name='comment'>
-                ".$comment."
-            </tr>"
+  if(mysqli_query($db, $sql)){
+    echo "comment inserted!";
+    echo $postId;
+  } else{
+    echo "no comments";
   }
-  echo $comments;
-
-} else{
-  echo "There are no posts";
 }
 
 

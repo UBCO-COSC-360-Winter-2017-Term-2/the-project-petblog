@@ -65,6 +65,8 @@ session_start();
 
         <?php include 'newsfeedposts.php'; ?>
 
+
+          // HARDCODED POST
           <div class= 'postandcomments'>
             <div class='apost'>
                 <figure>
@@ -83,11 +85,12 @@ session_start();
             <?php if ($_SESSION['loggedin'] == true): ?>
             <div class='postcomments'>
 
-              <form method='post' action='postcomments.php'>
+              <form method='post'>
+                <input type = 'hidden' name ='postId' value = '".$postId."'>
                 <input type='textarea' name='comment' placeholder='Comment..'' width='100%'' class='postcomment'>
                 <input type='submit' value='Post' name='postcomment' class='regi-btn' />
               </form>
-              
+
             </div>
             <?php endif; ?>
           </div>

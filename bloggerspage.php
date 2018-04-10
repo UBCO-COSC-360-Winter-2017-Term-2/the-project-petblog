@@ -88,6 +88,9 @@
             include 'bloggerspagenewsfeed.php';
               ?>
           </div>
+
+
+            <a href="accountsettings.php"><button name="settings" class = "btn">Account Settings</button></a>
 </div>
 </main>
 

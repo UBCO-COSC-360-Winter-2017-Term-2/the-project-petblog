@@ -8,7 +8,7 @@ if($db->connect_error){
     session_start();
 }
 
-$sql = "SELECT image,caption FROM posts WHERE username='".$_SESSION['username']."'ORDER BY postId DESC";
+$sql = "SELECT * FROM posts WHERE username='".$_SESSION['username']."'ORDER BY postId DESC";
 
 $res = mysqli_query($db,$sql) or die(mysqli_error());
 
@@ -18,6 +18,31 @@ if(mysqli_num_rows($res) > 0) {
   while($row = mysqli_fetch_assoc($res)){
     $image = $row['image'];
     $caption = $row['caption'];
+    $postId = $row['postId'];
+
+
+    $sqls = "SELECT * FROM comments WHERE postId ='".$postId."'ORDER BY cid DESC";
+    $ress = mysqli_query($db,$sql) or die(mysqli_error());
+
+    $comments= "";
+    $commentstable ="";
+
+    if(mysqli_num_rows($ress) > 0) {
+       while($rows = mysqli_fetch_assoc($ress)){
+
+        $comment= $rows['comment'];
+        $comments.= "<tr name='comment'>".$comment."</tr>";
+
+         $commentstable = "<div class='comments'>
+         <table class='commentstable'>
+         <tr> sample comment </tr>
+         ".$comments."
+         </table>
+          </div>";
+       }
+     } else{
+       $commentstable = "";
+     }
 
     $posts.= "<div class= 'postandcomments'>
     <div class='apost'>
@@ -26,24 +51,15 @@ if(mysqli_num_rows($res) > 0) {
         <figcaption name='caption'>".$caption."</figcaption>
       </figure>
     </div>
-        <div class='comments'>
-        <table class='commentstable'>
-        <tr name='comment'>
-        </tr>
-        </table>
-    </div>
-        <div class='postcomments'>
-        <form method='post'>
-          <input type='textarea'  placeholder='Comment..' width='100%' class='postcomment'>
-        <input type='submit' value='Post' name='postcomment' class='regi-btn' />
-        </form>
-    </div>
+    ".$commentstable."
     </div>";
   }
+
   echo $posts;
 } else{
   echo "There are no posts";
 }
 
+  mysqli_close($db);
 
  ?>

@@ -1,11 +1,13 @@
 <?php
 include 'db.php';
+
 if($db->connect_error){
 die("Connection failed");
 }
 else{
 session_start();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,22 +38,22 @@ session_start();
       <h1 >ADMIN - Users</h1>
 
       <div class = "search-post">
-         <form name="search-user" method="post" action="search_user.php">
-            <input type="textarea" placeholder = "Search a User" name = "search">
-            <button type ="submit" name="search-btn" class = "btn">Search</button>
+        <input type="textarea" placeholder = "Search a User" name = "search">
+        <button class = "btn">Search</button>
       </div>
 
       <table>
-        <tr>
-            <th width="30%">Username</th>
-            <th width="30%">First Name</th>
-            <th width="30%">Last Name</th>
-            <th width="30%">Email</th>
-            <th width="10%"></th>
-        </tr>
-        <?php include 'admin_users.php'; ?>
-        
-    </table>
+ <tr>
+   <th width="30%">Username</th>
+   <th width="30%">Password</th>
+   <th width="10%"></th>
+ </tr>
+ <tr>
+   <td>Example</td>
+   <td>Example</td>
+   <td><button class="btn">Delete</button><td>
+ </tr>
+</table>
     </div>
     </main>
 
