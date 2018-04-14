@@ -22,24 +22,24 @@ if(mysqli_num_rows($res) > 0) {
 
 
     $sqls = "SELECT * FROM comments WHERE postId ='".$postId."'ORDER BY cid DESC";
-    $ress = mysqli_query($db,$sql) or die(mysqli_error());
+    $ress = mysqli_query($db,$sqls) or die(mysqli_error());
 
     $comments= "";
-    $commentstable ="";
 
     if(mysqli_num_rows($ress) > 0) {
        while($rows = mysqli_fetch_assoc($ress)){
 
         $comment= $rows['comment'];
-        $comments.= "<tr name='comment'>".$comment."</tr>";
+        $username= $row['username'];
+        $comments.= "<tr name='comment'><td>".$username.": ".$comment."</td></tr>";
 
-         $commentstable = "<div class='comments'>
-         <table class='commentstable'>
-         <tr> sample comment </tr>
-         ".$comments."
-         </table>
-          </div>";
+
        }
+       $commentstable= "<div class='comments'>
+       <table class='commentstable'>
+       ".$comments."
+       </table>
+        </div>";
      } else{
        $commentstable = "";
      }

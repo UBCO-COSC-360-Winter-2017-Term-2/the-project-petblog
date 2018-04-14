@@ -21,16 +21,30 @@ if(mysqli_num_rows($res) > 0) {
     $username = $row['username'];
     $postId = $row['postId'];
 
-  //  $comments= "";
 
-    //   $comment= $row['comment'];
+    $sqls = "SELECT * FROM comments WHERE postId ='".$postId."'ORDER BY cid DESC";
+    $ress = mysqli_query($db,$sqls) or die(mysqli_error());
 
-    //    $comments.= "
-    //      <tr name='comment'>
-    //        ".$comment."
-    //      </tr>"
-  //  }
-//}
+    $comments= "";
+
+    if(mysqli_num_rows($ress) > 0) {
+        while($rows = mysqli_fetch_assoc($ress)){
+
+        $comment= $rows['comment'];
+        $username= $row['username'];
+        $comments.= "<tr name='comment'><td>".$username.": ".$comment."</td></tr>";
+      }
+        $commentstable= "<div class='comments'>
+        <table class='commentstable'>
+        ".$comments."
+        </table>
+        </div>";
+      } else{
+           $commentstable = "";
+      }
+
+
+
 
     if ($_SESSION['loggedin'] == true){
 
@@ -43,11 +57,7 @@ if(mysqli_num_rows($res) > 0) {
             <figcaption name='caption'>".$caption."</figcaption>
             </figure>
         </div>
-        <div class='comments'>
-          <table class='commentstable'>
-          </table>
-        </div>
-
+      ".$commentstable."
         <div class='postcomments'>
           <form method='post' action='postcomments.php'>
             <input type = 'hidden' name ='postId' value = '".$postId."'>
@@ -70,12 +80,7 @@ if(mysqli_num_rows($res) > 0) {
               <figcaption name='caption'>".$caption."</figcaption>
               </figure>
           </div>
-          <div class='comments'>
-            <table class='commentstable'>
-
-            </table>
-          </div>
-
+      ".$commentstable."
         </div>";
     }
   }

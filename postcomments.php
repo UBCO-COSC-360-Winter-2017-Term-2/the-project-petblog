@@ -17,8 +17,6 @@ if (isset($comment)){
   $sql = "INSERT INTO comments(comment,username,postId) VALUES('$comment','$username','$postId')";
 
   if(mysqli_query($db, $sql)){
-    echo "comment inserted!";
-    echo $postId;
   } else{
     echo "no comments";
   }

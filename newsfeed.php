@@ -61,46 +61,14 @@ session_start();
 
           <div class= "theposts">
 
-          <div class= "postandcomments">
-
-        <?php include 'newsfeedposts.php'; ?>
-
-
-          // HARDCODED POST
-          <div class= 'postandcomments'>
-            <div class='apost'>
-                <figure>
-                <h2>by ".$username."</h2>
-                <img src='".$image."' height='350' name='image'>
-
-                <figcaption name='caption'>".$caption."</figcaption>
-                </figure>
-            </div>
-            <div class='comments'>
-              <table class='commentstable'>
-                <tr name='comment'>
-              </tr>
-              </table>
-            </div>
-            <?php if ($_SESSION['loggedin'] == true): ?>
-            <div class='postcomments'>
-
-              <form method='post'>
-                <input type = 'hidden' name ='postId' value = '".$postId."'>
-                <input type='textarea' name='comment' placeholder='Comment..'' width='100%'' class='postcomment'>
-                <input type='submit' value='Post' name='postcomment' class='regi-btn' />
-              </form>
-
-            </div>
-            <?php endif; ?>
-          </div>
-
+              <?php include 'newsfeedposts.php'; ?>
 
           </div>
 
         </main>
 
       </body>
+
     <footer>
       <table>
 
