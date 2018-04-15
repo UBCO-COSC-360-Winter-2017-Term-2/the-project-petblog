@@ -25,6 +25,13 @@ if(mysqli_num_rows($res) > 0) {
                         <button type = 'submit' name = 'del-btn' class = 'delete-btn btn'>delete</button>
                         
                     </form>
+                    
+                    <form name = 'edit-form' action = 'edit_posts.php' method = 'post'>
+                        <input type = 'hidden' name = 'uname' value = '".$username."'>
+                        <input type = 'hidden' name = 'pid' value = '".$postId."'>
+                        <button type = 'submit' name = 'edit-btn' class = 'delete-btn btn'>edit</button>
+                    </form>
+                        
                     <div class='apost'>
                         <figure>
                             <h2>by ".$username."</h2>
