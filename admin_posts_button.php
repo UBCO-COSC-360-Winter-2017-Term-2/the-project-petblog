@@ -1,12 +1,12 @@
 <?php
 include 'db.php';
-
 if($db->connect_error){
 die("Connection failed");
 }
 else{
 session_start();
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -16,6 +16,37 @@ session_start();
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/navbarandfooter.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        load_data("viewall");
+        function load_data(query)
+        {
+            $.ajax({
+                url:"admin_posts.php",
+                method:"POST",
+                data:{query:query},
+                success:function(data)
+                {
+                    $('#theposts').html(data);
+                }
+            });
+        }
+        $('#category').change(function(){
+            var search = $('#category').val();
+            if(search != '')
+            {
+                load_data(search);
+            }
+            else
+            {
+                load_data();
+            }
+        });
+    });
+    </script>
+
   </head>
 
   <body>
@@ -42,9 +73,25 @@ session_start();
         <div class = "post-container">
 
           <div class = "search-post">
-            <input type="textarea" placeholder = "Narrow by Pet Type..." name = "search">
-            <button class = "btn">Search</button>
+            
+            <label>Category:</label>
+
+            <select id="category">
+                <option value="viewall">View All</option>
+                <option value="Dogs">Dogs</option>
+                <option value="Cats">Cats</option>
+                <option value="Fish">Fish</option>
+                <option value="Mouse">Mouse</option>
+                <option value="Hamster">Hamster</option>
+                <option value="Bird">Bird</option>
+                <option value="Other">Other</option>
+
+            </select></br>
           </div>
+            
+            <div id = "theposts" class = "postandcomments">
+                <?php include 'admin_posts.php'; ?>
+            </div>
 
         </div>
       </div>
