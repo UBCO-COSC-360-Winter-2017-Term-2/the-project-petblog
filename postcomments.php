@@ -17,6 +17,9 @@ if (isset($comment)){
   $sql = "INSERT INTO comments(comment,username,postId) VALUES('$comment','$username','$postId')";
 
   if(mysqli_query($db, $sql)){
+    echo "comment inserted!";
+    header("Location: newsfeed.php");
+
   } else{
     echo "no comments";
   }

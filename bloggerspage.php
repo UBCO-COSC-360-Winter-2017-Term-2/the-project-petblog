@@ -67,6 +67,7 @@
               <option value="Fish">
               <option value="Mouse">
               <option value="Hamster">
+              <option value="Bird">
               <option value="Other">
             </datalist></br>
 

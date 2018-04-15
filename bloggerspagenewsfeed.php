@@ -19,6 +19,7 @@ if(mysqli_num_rows($res) > 0) {
     $image = $row['image'];
     $caption = $row['caption'];
     $postId = $row['postId'];
+    $date = $row['Date'];
 
 
     $sqls = "SELECT * FROM comments WHERE postId ='".$postId."'ORDER BY cid DESC";
@@ -49,7 +50,9 @@ if(mysqli_num_rows($res) > 0) {
       <figure>
         <img src=".$image." height='350' name='image'>
         <figcaption name='caption'>".$caption."</figcaption>
+
       </figure>
+      <p>".$date."</p>
     </div>
     ".$commentstable."
     </div>";

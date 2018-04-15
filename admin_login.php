@@ -5,7 +5,6 @@
 	die("Connection failed");
   }
   else{
-	echo "connected";
 	session_start();
   }
 
@@ -13,19 +12,27 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql="SELECT username FROM admin WHERE username='$username' AND password='$password'";
-    $rs=$db->query($sql);
-    $count=mysqli_num_rows($rs);
+    $stmt = $db->prepare("SELECT username FROM admin WHERE username=? AND password=?");
+    $stmt->bind_param("ss",$username,$password);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    $stmt->fetch();
 
 
-    if($count==1){
+    //$sql="SELECT username FROM admin WHERE username='$username' AND password='$password'";
+  //  $rs=$db->query($sql);
+
+  //  $count=mysqli_num_rows($rs);
+
+
+    if(!empty($result)){
           $_SESSION['admin_loggedin']= true;
 
           header("Location: admin_page.php");
           echo("logged in");
       }
       else {
-          echo ("username or password is invalid");
+          echo '<script type="text/javascript">alert("Invalid inputs. Please try again.");</script>';
           $_SESSION['admin_loggedin'] = false;
   }
 }

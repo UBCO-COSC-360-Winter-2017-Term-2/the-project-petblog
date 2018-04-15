@@ -9,39 +9,19 @@
 	session_start();
   }
 
-  if ($_SESSION['loggedin'] == true){
-    header("Location: bloggerspage.php");
+  if(isset($_POST["forgotPass"])){
+    $email = $connection->real_escape_string($_POST["email"]);
+
+    $data = $connection->query("SELECT email FROM USERS WHERE email='".$email."'");
+
+
+    if($data->num_rows > 0){
+
+
+    }else{
+      echo '<script type="text/javascript">alert("Invalid inputs. Please try again.");</script>';
+    }
   }
-
-
-  if(isset($_POST['username']) && isset($_POST['password'])){
-
-    $username= $_POST['username'];
-    $password= $_POST['password'];
-
-    $passHash = md5($password);
-
-    $stmt = $db->prepare( "SELECT username, password FROM users WHERE username=? AND password=?");
-    $stmt->bind_param("ss",$username,$passHash);
-    $stmt->execute();
-    $stmt->bind_result($result);
-  //  $result = mysqli_query($db, "SELECT username, password FROM users WHERE username='".$username."'AND password='".$passHash."'");
-
-
-      if($stmt->fetch()){
-          $_SESSION['username']=$username;
-
-          $_SESSION['loggedin']=true;
-
-          header("Location: bloggerspage.php");
-
-      }else {
-          echo '<script type="text/javascript">alert("Invalid inputs. Please try again.");</script>';
-          $_SESSION['logged_in'] = false;
-      }
-
-  }
-
 ?>
 
 <!DOCTYPE html>
@@ -70,20 +50,14 @@
 <main>
 <div class = "content-body">
 
-  <h1 class = "loginandreg">LOG IN</h1>
+  <h1 class = "loginandreg">Reset Your Password</h1>
 
-  <form class = "form" action ="login.php" method = "post">
-    <input type="text" placeholder="User Name" name="username" required />
-    <input type="password" placeholder="Password" name="password" required/>
+<form action="forgotpassword.php" method="post">
+    <input type="text" name="email" placeholder="email"></br>
+    <input type="button" name="forgotPass" value="Submit" class="btn log-btn"></br>
+</form>
 
-    <input type="submit" value= "submit" class="btn log-btn" />
-  </form>
-  <a href="forgotpassword.php">Forgot Your Password?</a>
 
-  <div class = "regi-admin-link">
-    <a href = "admin_login.php"><button class="admin_button">Admin</button></a>
-  </div>
-</div>
 </main>
 
 

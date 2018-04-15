@@ -37,6 +37,7 @@
 
   if (isset($_POST['username'])) {
 
+
     $sql = "SELECT username FROM users WHERE username = '$username'";
     $rs = mysqli_query($db, $sql);
     $count=mysqli_num_rows($rs);
@@ -48,8 +49,12 @@
         move_uploaded_file($_FILES["avatar"]["tmp_name"],$target_file);
 
 
-        $sql = "INSERT INTO users VALUES('$username', '$hashPass', '$firstName', '$lastName', '$email', '$target_file')";
-        if ($db->query($sql) === TRUE) {
+        $stmt = $db->prepare("INSERT INTO users VALUES(?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss",$username,$hashPass,$firstName,$lastName,$email,$target_file);
+
+      //  $sql = "INSERT INTO users VALUES('$username', '$hashPass', '$firstName', '$lastName', '$email', '$target_file')";
+      //  if ($db->query($sql) === TRUE) {
+      if($stmt->execute()){
             //echo "New record created successfully";
 
             header("location: login.php");
